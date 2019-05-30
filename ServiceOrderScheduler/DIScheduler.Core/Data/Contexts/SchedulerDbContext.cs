@@ -9,7 +9,7 @@ namespace DIScheduler.Core.Data.Contexts
         public SchedulerDbContext()
        : base("AWS_DIProcessor")
         {
-            Database.SetInitializer<SapphireDbContext>(null);
+            Database.SetInitializer<SchedulerDbContext>(null);
             Configuration.LazyLoadingEnabled = false;
         }
 

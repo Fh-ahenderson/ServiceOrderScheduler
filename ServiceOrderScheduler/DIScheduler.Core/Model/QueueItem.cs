@@ -7,7 +7,7 @@ namespace DIScheduler.Core.Model
     {
         public string Activity { get; set; }
         public DateTime? ApprovePaymentDate { get; set; }
-        public DateTime? ApprovalDate { get; set; }
+        public DateTime? approval_date { get; set; }
         public DateTime? CancelledDate { get; set; }
         public string CommunityID { get; set; }
         public DateTime? ESubmittalDate { get; set; }

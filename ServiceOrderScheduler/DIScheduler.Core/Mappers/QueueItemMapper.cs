@@ -14,7 +14,7 @@ namespace DIScheduler.Core.Mappers
             {
                 Activity = "60100",
                 ApprovePaymentDate = sapphireObject.DateApproved,
-                ApprovalDate = sapphireObject.DateApproved,
+                approval_date = sapphireObject.DateApproved,
                 CancelledDate = sapphireObject.DateCancelled,
                 CommunityID = ParseCommunityCode(sapphireObject),
                 ESubmittalDate = sapphireObject.DateApproved,
