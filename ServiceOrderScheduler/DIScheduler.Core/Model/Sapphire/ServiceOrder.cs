@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DIScheduler.Core.Model.Sapphire
 {
@@ -17,7 +18,8 @@ namespace DIScheduler.Core.Model.Sapphire
         public int CommunityRID { get; set; }
         public virtual Community Community { get; set; }
 
-        public string VndRID { get; set; }
+        public int AssignedVndRID { get; set; }
+        [ForeignKey("AssignedVndRID")]
         public virtual Vendor Vendor { get; set; }
 
 
