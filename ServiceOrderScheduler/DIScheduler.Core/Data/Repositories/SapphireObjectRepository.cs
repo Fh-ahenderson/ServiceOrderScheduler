@@ -27,10 +27,8 @@ namespace DIScheduler.Core.Data.Repositories
             using (var _db = new SapphireDbContext())
             {
                 listFromSapphire = _db.ServiceOrder
-                    .Include(p => p.Activity)
-                    .Include(p => p.Job)
-                    .Include(p => p.Job.Lot)
-                    .Include(p => p.Job.Lot.Community)
+                    .Include(p => p.Lot)
+                    .Include(p => p.Lot.Community)
                     .Include(p => p.Vendor)
                     .Where(p => p.LastUpdated > lastRunDate).ToList();
             }
@@ -56,29 +54,19 @@ namespace DIScheduler.Core.Data.Repositories
         private void ValidateSapphireData(ServiceOrder svcOrdToValidate)
         {
 
-            if (svcOrdToValidate.Activity == null)
+            if (svcOrdToValidate.Lot == null)
             {
-                throw new MissingActivityException($"Missing Activity for SvcOrdRID {svcOrdToValidate.SvcOrdRID} and ActivityId {svcOrdToValidate.ActRID}");
+                throw new MissingLotException($"Missing Lot for SvcOrdRID {svcOrdToValidate.SvcOrdRID}  and LotRID {svcOrdToValidate.LotRID}");
             }
 
-            if (svcOrdToValidate.Job == null)
+            if (svcOrdToValidate.Lot.Community == null)
             {
-                throw new MissingJobException($"Missing Job for SvcOrdRID {svcOrdToValidate.SvcOrdRID} and JobId {svcOrdToValidate.JobRID}");
-            }
-
-            if (svcOrdToValidate.Job.Lot == null)
-            {
-                throw new MissingLotException($"Missing Lot for SvcOrdRID {svcOrdToValidate.SvcOrdRID} and JobRID {svcOrdToValidate.Job.JobRID} and LotRID {svcOrdToValidate.Job.LotRID}");
-            }
-
-            if (svcOrdToValidate.Job.Lot.Community == null)
-            {
-                throw new MissingCommunityException($"Missing Community for SvcOrdRID {svcOrdToValidate.SvcOrdRID} and JobRID {svcOrdToValidate.Job.JobRID} and LotRID {svcOrdToValidate.Job.LotRID} and CommunityRID {svcOrdToValidate.Job.Lot.CommunityRID}");
+                throw new MissingCommunityException($"Missing Community for SvcOrdRID {svcOrdToValidate.SvcOrdRID} and LotRID {svcOrdToValidate.LotRID} and CommunityRID {svcOrdToValidate.Lot.CommunityRID}");
             }
 
             if (svcOrdToValidate.Vendor == null)
             {
-                throw new MissingVendorException($"Missing Vendor for JobRID {svcOrdToValidate.JobRID} and VndRID {svcOrdToValidate.VndRID}");
+                throw new MissingVendorException($"Missing Vendor for JobRID {svcOrdToValidate.LotRID} and VndRID {svcOrdToValidate.Vendor.VndRID}");
             }
 
         }

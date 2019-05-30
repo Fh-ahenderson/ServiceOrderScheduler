@@ -88,9 +88,7 @@
     <Compile Include="Model\Enums\ServiceStatusTypeValues.cs" />
     <Compile Include="Model\NextRun.cs" />
     <Compile Include="Model\QueueItem.cs" />
-    <Compile Include="Model\Sapphire\Activity.cs" />
     <Compile Include="Model\Sapphire\Community.cs" />
-    <Compile Include="Model\Sapphire\Job.cs" />
     <Compile Include="Model\Sapphire\Lot.cs" />
     <Compile Include="Model\Sapphire\ReasonCode.cs" />
     <Compile Include="Model\Sapphire\ServiceOrder.cs" />

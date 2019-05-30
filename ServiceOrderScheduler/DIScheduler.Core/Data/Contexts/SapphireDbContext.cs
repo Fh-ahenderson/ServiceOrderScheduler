@@ -14,9 +14,6 @@ namespace DIScheduler.Core.Data.Contexts
         }
 
         public DbSet<ServiceOrder> ServiceOrder { get; set; }
-
-        public DbSet<Activity> Activity { get; set; }
-        public DbSet<Job> Job { get; set; }
         public DbSet<Lot> Lot { get; set; }
         public DbSet<Vendor> Vendor { get; set; }
 
@@ -27,8 +24,6 @@ namespace DIScheduler.Core.Data.Contexts
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             EfMapServiceOrder(modelBuilder);
-            EfMapActivity(modelBuilder);
-            EfMapJob(modelBuilder);
             EfMapLot(modelBuilder);
             EfMapCommunity(modelBuilder);
             EfMapVendor(modelBuilder);
@@ -42,25 +37,11 @@ namespace DIScheduler.Core.Data.Contexts
             sapphireObject.HasKey(k => k.SvcOrdRID);
         }
 
-        private static void EfMapActivity(DbModelBuilder modelBuilder)
-        {
-            var act = modelBuilder.Entity<Activity>();
-            act.ToTable("Acts");
-            act.HasKey(k => k.ActRID);
-        }
-
         private static void EfMapCommunity(DbModelBuilder modelBuilder)
         {
             var com = modelBuilder.Entity<Community>();
             com.ToTable("Communities");
             com.HasKey(k => k.CommunityRID);
-        }
-
-        private static void EfMapJob(DbModelBuilder modelBuilder)
-        {
-            var job = modelBuilder.Entity<Job>();
-            job.ToTable("Jobs");
-            job.HasKey(k => k.JobRID);
         }
 
         private static void EfMapLot(DbModelBuilder modelBuilder)

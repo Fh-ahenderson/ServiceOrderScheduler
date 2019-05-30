@@ -7,17 +7,17 @@ namespace DIScheduler.Core.Model.Sapphire
         public int SvcOrdRID { get; set; }
         public decimal AmtTotal { get; set; }
         public string Status { get; set; }
-        public string RefNumber { get; set; }
         public string SvcOrdID { get; set; }
+        public string VPORefNum { get; set; }
         public DateTime LastUpdated { get; set; }
 
-        public int JobRID { get; set; }
-        public virtual Job Job { get; set; }
+        public int LotRID { get; set; }
+        public virtual Lot Lot { get; set; }
 
-        public int ActRID { get; set; }
-        public virtual Activity Activity { get; set; }
+        public int CommunityRID { get; set; }
+        public virtual Community Community { get; set; }
 
-        public int VndRID { get; set; }
+        public string VndRID { get; set; }
         public virtual Vendor Vendor { get; set; }
 
 

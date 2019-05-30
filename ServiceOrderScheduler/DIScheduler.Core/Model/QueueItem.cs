@@ -11,6 +11,7 @@ namespace DIScheduler.Core.Model
         public DateTime? CancelledDate { get; set; }
         public string CommunityID { get; set; }
         public DateTime? ESubmittalDate { get; set; }
+        public string RefNumber { get; set; }
         public string JobNo { get; set; }
         public int? JobRID { get; set; }
         public string JobSvcOrdType { get; set; }
