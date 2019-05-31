@@ -1,6 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
-using DIScheduler.template.Core.Services;
+using DIScheduler.Core.Services;
 
 namespace DIScheduler.Tests.Services.Email
 {

@@ -1,8 +1,8 @@
 ﻿using System;
-using DIScheduler.template.Core.Interfaces.Repositories;
-using DIScheduler.template.Core.Model;
-using DIScheduler.template.Core.Model.Enums;
-using DIScheduler.template.Core.Services;
+using DIScheduler.Core.Interfaces.Repositories;
+using DIScheduler.Core.Model;
+using DIScheduler.Core.Model.Enums;
+using DIScheduler.Core.Services;
 using Moq;
 using NUnit.Framework;
 

@@ -1,4 +1,4 @@
-﻿using DIScheduler.template.Core.Services;
+﻿using DIScheduler.Core.Services;
 using NUnit.Framework;
 
 namespace DIScheduler.Tests.Services.SentryEvent
