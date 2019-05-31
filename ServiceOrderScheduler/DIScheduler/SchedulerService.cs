@@ -35,6 +35,8 @@ namespace DIScheduler
         public SchedulerService(IScheduler scheduler, ISentryEventService sentryEventService, IEmailService emailService)
         {
             _scheduler = scheduler;
+            _sentryEventService = sentryEventService;
+            _emailService = emailService;
             InitializeComponent();
         }
 
@@ -69,7 +71,7 @@ namespace DIScheduler
             }
             catch (Exception ex)
             {
-                EventLog.WriteEntry("[Sapphire Object]_Scheduler", "Exception" + ex);
+                EventLog.WriteEntry("ServiceOrder_Scheduler", "Exception" + ex);
             }
         }
 

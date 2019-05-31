@@ -49,9 +49,6 @@ namespace DIScheduler.Core.Mappers
 
             throw new Exception($"Failed to Parse Community Code for Sapphire Record ID {sapphireObject.SvcOrdRID} using CommunityId {sapphireObject.Lot.Community.CommunityId}");
         }
-
-        // TEMPLATE: Define business logic methods here to parse sapphire data to DI_Queue table  (i.e. ParseCommunityCode() )
-
     }
 
 }
